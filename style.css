@@ -419,8 +419,11 @@ fieldset { border: none; padding: 0; margin: 0 0 14px; }
 }
 
 /* ==================== MODAL ==================== */
+/* 🔧 FIX #1: paksa [hidden] menyembunyikan elemen apa pun */
 [hidden] { display: none !important; }
-.modal-backdrop {
+
+/* 🔧 FIX #2: modal hanya tampil bila tidak tersembunyi */
+.modal-backdrop:not([hidden]) {
   position: fixed; inset: 0; background: rgba(0,0,0,0.55);
   display: grid; place-items: center; z-index: 100;
   padding: 16px;
